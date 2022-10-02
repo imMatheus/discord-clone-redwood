@@ -1,6 +1,7 @@
 import { render } from '@redwoodjs/testing/web'
-import { Loading, Empty, Failure, Success } from './ServersCell'
-import { standard } from './ServersCell.mock'
+
+import { Loading, Empty, Failure, Success } from './SidebarServersCell'
+import { standard } from './SidebarServersCell.mock'
 
 // Generated boilerplate tests do not account for all circumstances
 // and can fail without adjustments, e.g. Float and DateTime types.

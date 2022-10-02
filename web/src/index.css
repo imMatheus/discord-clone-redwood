@@ -3,6 +3,5 @@
 @import 'tailwindcss/utilities';
 
  body{
-  @apply bg-green-300;
-
+  @apply bg-clr-bg-primary text-clr-text;
  }

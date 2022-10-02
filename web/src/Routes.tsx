@@ -9,17 +9,26 @@
 
 import { Set, Router, Route } from '@redwoodjs/router'
 
-import MessagesLayout from 'src/layouts/MessagesLayout'
-
 import ChannelsLayout from 'src/layouts/ChannelsLayout'
-
+import MainLayout from 'src/layouts/MainLayout'
 import MembersLayout from 'src/layouts/MembersLayout'
-
+import MessagesLayout from 'src/layouts/MessagesLayout'
 import ServersLayout from 'src/layouts/ServersLayout'
 
 const Routes = () => {
   return (
     <Router>
+      <Route path="/login" page={LoginPage} name="login" />
+      <Route path="/signup" page={SignupPage} name="signup" />
+      <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
+      <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
+
+      <Set wrap={MainLayout}>
+        <Route path="/" page={HomePage} name="home" />
+      </Set>
+
+      <Route notfound page={NotFoundPage} />
+
       <Set wrap={MessagesLayout}>
         <Route path="/messages/new" page={MessageNewMessagePage} name="newMessage" />
         <Route path="/messages/{id:Int}/edit" page={MessageEditMessagePage} name="editMessage" />
@@ -44,12 +53,6 @@ const Routes = () => {
         <Route path="/servers/{id:Int}" page={ServerServerPage} name="server" />
         <Route path="/servers" page={ServerServersPage} name="servers" />
       </Set>
-      <Route path="/login" page={LoginPage} name="login" />
-      <Route path="/signup" page={SignupPage} name="signup" />
-      <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
-      <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
-      <Route path="/" page={HomePage} name="home" />
-      <Route notfound page={NotFoundPage} />
     </Router>
   )
 }
