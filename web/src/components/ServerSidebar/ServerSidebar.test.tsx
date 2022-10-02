@@ -1,14 +1,14 @@
 import { render } from '@redwoodjs/testing/web'
 
-import ServerNavbar from './ServerNavbar'
+import ServerSidebar from './ServerSidebar'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
 
-describe('ServerNavbar', () => {
+describe('ServerSidebar', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<ServerNavbar />)
+      render(<ServerSidebar />)
     }).not.toThrow()
   })
 })

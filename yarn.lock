@@ -19985,6 +19985,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-feather@npm:^2.0.10":
+  version: 2.0.10
+  resolution: "react-feather@npm:2.0.10"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: ">=16.8.6"
+  checksum: bcc312ab39a710d8fa6fb611fde2affb38cf183fa5215d46c78577d88950ecb9181b59e4b57d7683f543d25725a39deb0c2ad9a9f29cab1a44bf4cbca46e6b8e
+  languageName: node
+  linkType: hard
+
 "react-helmet-async@npm:1.3.0":
   version: 1.3.0
   resolution: "react-helmet-async@npm:1.3.0"
@@ -23830,6 +23841,7 @@ __metadata:
     prop-types: 15.8.1
     react: 17.0.2
     react-dom: 17.0.2
+    react-feather: ^2.0.10
     tailwindcss: ^3.1.8
   languageName: unknown
   linkType: soft

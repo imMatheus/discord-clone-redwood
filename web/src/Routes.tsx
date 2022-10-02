@@ -25,7 +25,7 @@ const Routes = () => {
 
       <Set wrap={MainLayout}>
         <Route path="/" page={HomePage} name="home" />
-        <Set wrap={ServerLayout}>
+        <Set wrap={ServerLayout} private unauthenticated="home">
           <Route path="/server/{serverId:Int}/channel/{channelId:Int}" page={ChannelPage} name="channel" />
           <Route path="/server/{serverId:Int}" page={ServerServerPage} name="server" />
         </Set>

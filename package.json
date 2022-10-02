@@ -11,8 +11,8 @@
     "format": "npx prettier --write \"{web,api,scripts}/**/*.{js,ts,tsx,jsx}\"",
     "format-check": "npx prettier --check",
     "db:connect": "pscale connect discord dev --port 3309",
-		"db:push": "npx prisma db push",
-		"db:generate": "prisma generate"
+    "db:push": "npx prisma db push",
+    "db:generate": "prisma generate"
   },
   "devDependencies": {
     "@redwoodjs/core": "3.0.3",
