@@ -7,7 +7,15 @@ import type {
 import { db } from 'src/lib/db'
 
 export const servers: QueryResolvers['servers'] = () => {
-  return db.server.findMany()
+  return db.server.findMany({
+    where: {
+      members: {
+        some: {
+          userId: context.currentUser.id,
+        },
+      },
+    },
+  })
 }
 
 export const server: QueryResolvers['server'] = ({ id }) => {
