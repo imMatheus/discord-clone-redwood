@@ -17,8 +17,19 @@ export const server: QueryResolvers['server'] = ({ id }) => {
 }
 
 export const createServer: MutationResolvers['createServer'] = ({ input }) => {
+  console.log('context.currentUser.id,', context.currentUser.id)
+
   return db.server.create({
-    data: input,
+    data: {
+      ...input,
+      members: {
+        create: [
+          {
+            userId: context.currentUser.id,
+          },
+        ],
+      },
+    },
   })
 }
 
