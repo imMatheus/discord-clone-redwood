@@ -9,11 +9,11 @@
 
 import { Set, Router, Route } from '@redwoodjs/router'
 
-import ChannelsLayout from 'src/layouts/ChannelsLayout'
+// import ChannelsLayout from 'src/layouts/ChannelsLayout'
 import MainLayout from 'src/layouts/MainLayout'
 import MembersLayout from 'src/layouts/MembersLayout'
 import MessagesLayout from 'src/layouts/MessagesLayout'
-import ServersLayout from 'src/layouts/ServersLayout'
+import ServerLayout from 'src/layouts/ServerLayout'
 
 const Routes = () => {
   return (
@@ -25,6 +25,10 @@ const Routes = () => {
 
       <Set wrap={MainLayout}>
         <Route path="/" page={HomePage} name="home" />
+        <Set wrap={ServerLayout}>
+          <Route path="/server/{serverId:Int}/channel/{channelId:Int}" page={ChannelPage} name="channel" />
+          <Route path="/server/{serverId:Int}" page={ServerServerPage} name="server" />
+        </Set>
       </Set>
 
       <Route notfound page={NotFoundPage} />
@@ -35,23 +39,17 @@ const Routes = () => {
         <Route path="/messages/{id:Int}" page={MessageMessagePage} name="message" />
         <Route path="/messages" page={MessageMessagesPage} name="messages" />
       </Set>
-      <Set wrap={ChannelsLayout}>
+      {/* <Set wrap={ChannelsLayout}>
         <Route path="/channels/new" page={ChannelNewChannelPage} name="newChannel" />
         <Route path="/channels/{id:Int}/edit" page={ChannelEditChannelPage} name="editChannel" />
         <Route path="/channels/{id:Int}" page={ChannelChannelPage} name="channel" />
         <Route path="/channels" page={ChannelChannelsPage} name="channels" />
-      </Set>
+      </Set> */}
       <Set wrap={MembersLayout}>
         <Route path="/members/new" page={MemberNewMemberPage} name="newMember" />
         <Route path="/members/{id:Int}/edit" page={MemberEditMemberPage} name="editMember" />
         <Route path="/members/{id:Int}" page={MemberMemberPage} name="member" />
         <Route path="/members" page={MemberMembersPage} name="members" />
-      </Set>
-      <Set wrap={ServersLayout}>
-        <Route path="/servers/new" page={ServerNewServerPage} name="newServer" />
-        <Route path="/servers/{id:Int}/edit" page={ServerEditServerPage} name="editServer" />
-        <Route path="/servers/{id:Int}" page={ServerServerPage} name="server" />
-        <Route path="/servers" page={ServerServersPage} name="servers" />
       </Set>
     </Router>
   )

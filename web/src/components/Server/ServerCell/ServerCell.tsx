@@ -1,16 +1,15 @@
 import type { FindServerById } from 'types/graphql'
 
+import { Redirect, routes } from '@redwoodjs/router'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
-
-import Server from 'src/components/Server/Server'
 
 export const QUERY = gql`
   query FindServerById($id: Int!) {
     server: server(id: $id) {
       id
-      name
-      createdAt
-      updatedAt
+      channels {
+        id
+      }
     }
   }
 `
@@ -24,5 +23,14 @@ export const Failure = ({ error }: CellFailureProps) => (
 )
 
 export const Success = ({ server }: CellSuccessProps<FindServerById>) => {
-  return <Server server={server} />
+  return server.channels.length > 0 ? (
+    <Redirect
+      to={routes.channel({
+        serverId: server.id,
+        channelId: server.channels[0].id,
+      })}
+    />
+  ) : (
+    <div>hej</div>
+  )
 }
