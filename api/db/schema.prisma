@@ -33,6 +33,7 @@ model Server {
 }
 
 model Member {
+  id        Int      @id @default(autoincrement())
   server    Server   @relation(fields: [serverId], references: [id])
   serverId  Int
   user      User     @relation(fields: [userId], references: [id])
@@ -40,7 +41,6 @@ model Member {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
 
-  @@id([serverId, userId])
   @@unique([serverId, userId])
 }
 
