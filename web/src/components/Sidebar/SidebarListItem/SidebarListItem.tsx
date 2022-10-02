@@ -15,8 +15,8 @@ const SidebarListItem: React.FC<SidebarListItemProps> = ({ server }) => {
   return (
     <div className="relative flex w-[4.5rem] items-center justify-center overflow-x-hidden px-3">
       <Link to={routes.server({ serverId: server.id })}>
-        <div className="block h-12 w-12 flex-shrink-0 rounded-3xl bg-red-500 transition-all duration-300 hover:rounded-2xl">
-          {server.name}
+        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-3xl bg-clr-bg-primary text-lg transition-all duration-300 hover:rounded-2xl hover:bg-clr-blurple">
+          {server.name.substring(0, 1)}
         </div>
       </Link>
     </div>

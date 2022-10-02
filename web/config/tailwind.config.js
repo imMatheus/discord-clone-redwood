@@ -5,10 +5,16 @@ module.exports = {
     extend: {
       colors: {
         // 'clr-bg': '#35393f',
-        'clr-bg-dark': '#303136',
-        'clr-bg-sidebar': '#1f2225',
-        'clr-text': '#ffffff',
-        'clr-text-grayed': '#96989d',
+        clr: {
+          blurple: '#5865f2',
+          apple: '#57f287',
+          crimson: '#ed4245',
+          bee: '#fee75c',
+          fuchsia: '#eb459e',
+          black: '#23272a',
+          text: '#ffffff',
+          'text-grayed': '#96989d',
+        },
         'clr-bg': {
           separator: '#4F545C7A',
           content: '#4F545C99',
