@@ -1,10 +1,11 @@
-import humanize from 'humanize-string'
+import type {
+  DeleteServerMutationVariables,
+  FindServerById,
+} from 'types/graphql'
 
 import { Link, routes, navigate } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
-
-import type { DeleteServerMutationVariables, FindServerById } from 'types/graphql'
 
 const DELETE_SERVER_MUTATION = gql`
   mutation DeleteServerMutation($id: Int!) {
@@ -14,25 +15,6 @@ const DELETE_SERVER_MUTATION = gql`
   }
 `
 
-const formatEnum = (values: string | string[] | null | undefined) => {
-  if (values) {
-    if (Array.isArray(values)) {
-      const humanizedValues = values.map((value) => humanize(value))
-      return humanizedValues.join(', ')
-    } else {
-      return humanize(values as string)
-    }
-  }
-}
-
-const jsonDisplay = (obj: unknown) => {
-  return (
-    <pre>
-      <code>{JSON.stringify(obj, null, 2)}</code>
-    </pre>
-  )
-}
-
 const timeTag = (datetime?: string) => {
   return (
     datetime && (
@@ -41,10 +23,6 @@ const timeTag = (datetime?: string) => {
       </time>
     )
   )
-}
-
-const checkboxInputTag = (checked: boolean) => {
-  return <input type="checkbox" checked={checked} disabled />
 }
 
 interface Props {
@@ -81,13 +59,16 @@ const Server = ({ server }: Props) => {
             <tr>
               <th>Id</th>
               <td>{server.id}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Name</th>
               <td>{server.name}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Created at</th>
               <td>{timeTag(server.createdAt)}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Updated at</th>
               <td>{timeTag(server.updatedAt)}</td>
             </tr>

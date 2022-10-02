@@ -22,28 +22,12 @@ export const Failure = ({ error }: CellFailureProps) => (
 )
 
 export const Success = ({ servers }: CellSuccessProps<ServersQuery>) => {
+  console.log('log; ', servers)
+
   return (
-    <ul className="flex flex-col gap-2 py-2">
-      {servers.map((item) => {
-        return <SidebarListItem key={item.id} />
-      })}
-      {servers.map((item) => {
-        return <SidebarListItem key={item.id} />
-      })}
-      {servers.map((item) => {
-        return <SidebarListItem key={item.id} />
-      })}
-      {servers.map((item) => {
-        return <SidebarListItem key={item.id} />
-      })}
-      {servers.map((item) => {
-        return <SidebarListItem key={item.id} />
-      })}
-      {servers.map((item) => {
-        return <SidebarListItem key={item.id} />
-      })}
-      {servers.map((item) => {
-        return <SidebarListItem key={item.id} />
+    <ul className="flex w-[4.5rem] flex-col gap-2 overflow-x-visible overflow-y-scroll py-2">
+      {servers.map((server) => {
+        return <SidebarListItem key={server.id} server={server} />
       })}
     </ul>
   )
