@@ -115,6 +115,7 @@ export const handler = async (
           username,
           hashedPassword: hashedPassword,
           salt: salt,
+          avatar_url: `https://avatars.dicebear.com/api/male/${username}.svg`,
           // name: userAttributes.name
         },
       })

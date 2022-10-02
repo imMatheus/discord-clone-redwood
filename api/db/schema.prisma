@@ -13,6 +13,7 @@ model User {
   id                  Int       @id @default(autoincrement())
   email               String    @unique
   username            String    @unique
+  avatar_url          String    @default("https://avatars.dicebear.com/api/male/john.svg")
   hashedPassword      String
   salt                String
   resetToken          String?

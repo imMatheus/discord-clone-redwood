@@ -1,9 +1,11 @@
-import type { FindServerAndChannelsById } from 'types/graphql'
+import type { ChannelsSidebar } from 'types/graphql'
 
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
+import UserDisplay from 'src/components/ChannelsSidebar/UserDisplay'
+
 export const QUERY = gql`
-  query FindServerAndChannelsById($id: Int!) {
+  query ChannelsSidebar($id: Int!) {
     server: server(id: $id) {
       id
       name
@@ -24,9 +26,7 @@ export const Failure = ({ error }: CellFailureProps) => (
   <div style={{ color: 'red' }}>Error: {error?.message}</div>
 )
 
-export const Success = ({
-  server,
-}: CellSuccessProps<FindServerAndChannelsById>) => {
+export const Success = ({ server }: CellSuccessProps<ChannelsSidebar>) => {
   console.log('hi sidebar ', server)
 
   return (
@@ -41,7 +41,7 @@ export const Success = ({
           ))}
         </ul>
       </div>
-      <div className="bg-clr-crimson">hej</div>
+      <UserDisplay />
     </div>
   )
 }
