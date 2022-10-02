@@ -13,13 +13,13 @@
 
 import type { ComponentMeta } from '@storybook/react'
 
-import ServerSidebar from './ServerSidebar'
+import ChannelsSidebar from './ChannelsSidebar'
 
 export const generated = () => {
-  return <ServerSidebar />
+  return <ChannelsSidebar serverId={1} />
 }
 
 export default {
-  title: 'Components/ServerSidebar',
-  component: ServerSidebar,
-} as ComponentMeta<typeof ServerSidebar>
+  title: 'Components/ChannelsSidebar',
+  component: ChannelsSidebar,
+} as ComponentMeta<typeof ChannelsSidebar>

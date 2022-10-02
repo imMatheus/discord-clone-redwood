@@ -30,9 +30,18 @@ export const Success = ({
   console.log('hi sidebar ', server)
 
   return (
-    <div className="">
-      <div className="py-3 px-4">{server.name}</div>
-      <pre className="py-2">{JSON.stringify(server, null, 2)}</pre>
+    <div className="flex h-screen flex-col">
+      <div className="border-b border-b-clr-black py-3 px-4 font-medium">
+        {server.name}
+      </div>
+      <div className="flex-1 bg-clr-bg-content">
+        <ul className="">
+          {[1, 2, 3, 4, 6, 7, 8].map(() => (
+            <li key="s">Hej</li>
+          ))}
+        </ul>
+      </div>
+      <div className="bg-clr-crimson">hej</div>
     </div>
   )
 }

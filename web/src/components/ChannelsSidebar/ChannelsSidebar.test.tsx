@@ -1,14 +1,14 @@
 import { render } from '@redwoodjs/testing/web'
 
-import ServerSidebar from './ServerSidebar'
+import ChannelsSidebar from './ChannelsSidebar'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
 
-describe('ServerSidebar', () => {
+describe('ChannelsSidebar', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<ServerSidebar />)
+      render(<ChannelsSidebar serverId={1} />)
     }).not.toThrow()
   })
 })

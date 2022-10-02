@@ -3,7 +3,7 @@ type ServerLayoutProps = {
 }
 import { useParams } from '@redwoodjs/router'
 
-import ServerSidebar from 'src/components/ServerSidebar'
+import ChannelsSidebar from 'src/components/ChannelsSidebar'
 
 const ServerLayout = ({ children }: ServerLayoutProps) => {
   const params = useParams()
@@ -11,7 +11,7 @@ const ServerLayout = ({ children }: ServerLayoutProps) => {
 
   return (
     <div className="flex flex-1 bg-red-800">
-      <ServerSidebar serverId={parseInt(params.serverId)} />
+      <ChannelsSidebar serverId={parseInt(params.serverId)} />
       <div className="flex-1 bg-orange-400 p-2">{children}</div>
     </div>
   )
