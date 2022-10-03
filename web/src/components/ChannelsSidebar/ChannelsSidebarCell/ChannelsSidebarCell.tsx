@@ -16,7 +16,7 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => <div className="flex-1">Loading...</div>
 
 export const Empty = () => <div>Empty</div>
 
@@ -28,14 +28,14 @@ export const Success = ({ server }: CellSuccessProps<ChannelsSidebar>) => {
   console.log('hi sidebar ', server)
 
   return (
-    <div className="flex h-screen flex-col">
-      <div className="border-b border-b-clr-black py-3 px-4 font-medium">
+    <div className="flex flex-1 flex-col overflow-y-scroll">
+      <div className="sticky top-0 border-b border-b-clr-black bg-clr-bg-secondary py-3 px-4 font-medium">
         {server.name}
       </div>
       <div className="flex-1 py-3 px-4">
         <ul className="">
-          {[1, 2, 3, 4, 6, 7, 8].map(() => (
-            <li key="s">Hej</li>
+          {[1, 2, 3, 4, 6, 7, 8].map((num) => (
+            <li key={num}>Hej</li>
           ))}
         </ul>
       </div>

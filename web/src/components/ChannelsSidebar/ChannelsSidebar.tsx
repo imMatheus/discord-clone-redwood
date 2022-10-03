@@ -7,7 +7,7 @@ interface Props {
 
 const ChannelsSidebar = ({ serverId }: Props) => {
   return (
-    <aside className="flex w-60 flex-col bg-clr-bg-secondary">
+    <aside className="flex h-screen w-60 flex-col bg-clr-bg-secondary">
       <ChannelsSidebarCell id={serverId} />
       <UserDisplay />
     </aside>
