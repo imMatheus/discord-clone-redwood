@@ -3,6 +3,7 @@ type ServerLayoutProps = {
 }
 import { useParams } from '@redwoodjs/router'
 
+import ChannelNavbar from 'src/components/ChannelNavbar'
 import ChannelsSidebar from 'src/components/ChannelsSidebar'
 
 const ServerLayout = ({ children }: ServerLayoutProps) => {
@@ -12,7 +13,10 @@ const ServerLayout = ({ children }: ServerLayoutProps) => {
   return (
     <div className="flex flex-1">
       <ChannelsSidebar serverId={parseInt(params.serverId)} />
-      <div className="flex-1 p-2">{children}</div>
+      <div className="flex flex-1 flex-col">
+        <ChannelNavbar />
+        {children}
+      </div>
     </div>
   )
 }

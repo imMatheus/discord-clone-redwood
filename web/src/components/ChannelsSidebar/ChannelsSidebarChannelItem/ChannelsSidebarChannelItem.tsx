@@ -31,7 +31,7 @@ const ChannelsSidebarChannelItem: React.FC<SidebarListItemProps> = ({
         { 'bg-clr-bg-content text-clr-text': match }
       )}
     >
-      <Hash className="h-4 w-4 text-clr-text-grayed" />
+      <Hash strokeWidth={2.5} className="h-4 w-4 text-clr-text-grayed" />
       <p className="">{channel.name}</p>
     </Link>
   )
