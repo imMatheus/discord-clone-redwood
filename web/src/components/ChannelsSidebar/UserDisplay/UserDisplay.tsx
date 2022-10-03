@@ -6,7 +6,7 @@ const UserDisplay = () => {
   console.log(currentUser)
 
   return (
-    <div className="flex items-center gap-2 py-3 px-4">
+    <div className="flex items-center gap-2 bg-clr-bg-panel py-3 px-4">
       <div className="relative h-8 w-8 overflow-hidden rounded-full bg-clr-text">
         <img src={currentUser.avatar_url} alt={`${currentUser.username}`} />
       </div>

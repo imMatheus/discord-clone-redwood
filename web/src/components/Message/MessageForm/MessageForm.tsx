@@ -11,9 +11,6 @@ import {
 import type { EditMessageById, UpdateMessageInput } from 'types/graphql'
 import type { RWGqlError } from '@redwoodjs/forms'
 
-
-
-
 type FormMessage = NonNullable<EditMessageById['message']>
 
 interface MessageFormProps {
@@ -25,16 +22,6 @@ interface MessageFormProps {
 
 const MessageForm = (props: MessageFormProps) => {
   const onSubmit = (data: FormMessage) => {
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
     props.onSave(data, props?.message?.id)
   }
 
@@ -47,7 +34,7 @@ const MessageForm = (props: MessageFormProps) => {
           titleClassName="rw-form-error-title"
           listClassName="rw-form-error-list"
         />
-      
+
         <Label
           name="text"
           className="rw-label"
@@ -55,15 +42,14 @@ const MessageForm = (props: MessageFormProps) => {
         >
           Text
         </Label>
-        
-          <TextField
-            name="text"
-            defaultValue={props.message?.text}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="text"
+          defaultValue={props.message?.text}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="text" className="rw-field-error" />
 
@@ -74,15 +60,14 @@ const MessageForm = (props: MessageFormProps) => {
         >
           Channel id
         </Label>
-        
-          <NumberField
-            name="channelId"
-            defaultValue={props.message?.channelId}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <NumberField
+          name="channelId"
+          defaultValue={props.message?.channelId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="channelId" className="rw-field-error" />
 
@@ -93,23 +78,19 @@ const MessageForm = (props: MessageFormProps) => {
         >
           User id
         </Label>
-        
-          <NumberField
-            name="userId"
-            defaultValue={props.message?.userId}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <NumberField
+          name="userId"
+          defaultValue={props.message?.userId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="userId" className="rw-field-error" />
 
         <div className="rw-button-group">
-          <Submit
-            disabled={props.loading}
-            className="rw-button rw-button-blue"
-          >
+          <Submit disabled={props.loading} className="rw-button rw-button-blue">
             Save
           </Submit>
         </div>

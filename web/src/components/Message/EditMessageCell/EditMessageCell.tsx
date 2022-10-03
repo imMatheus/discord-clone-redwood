@@ -62,10 +62,17 @@ export const Success = ({ message }: CellSuccessProps<EditMessageById>) => {
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">Edit Message {message?.id}</h2>
+        <h2 className="rw-heading rw-heading-secondary">
+          Edit Message {message?.id}
+        </h2>
       </header>
       <div className="rw-segment-main">
-        <MessageForm message={message} onSave={onSave} error={error} loading={loading} />
+        <MessageForm
+          message={message}
+          onSave={onSave}
+          error={error}
+          loading={loading}
+        />
       </div>
     </div>
   )

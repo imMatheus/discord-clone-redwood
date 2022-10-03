@@ -4,7 +4,10 @@ import { Link, routes, navigate } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 
-import type { DeleteChannelMutationVariables, FindChannelById } from 'types/graphql'
+import type {
+  DeleteChannelMutationVariables,
+  FindChannelById,
+} from 'types/graphql'
 
 const DELETE_CHANNEL_MUTATION = gql`
   mutation DeleteChannelMutation($id: Int!) {
@@ -81,19 +84,24 @@ const Channel = ({ channel }: Props) => {
             <tr>
               <th>Id</th>
               <td>{channel.id}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Name</th>
               <td>{channel.name}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Channel type</th>
               <td>{formatEnum(channel.channel_type)}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Server id</th>
               <td>{channel.serverId}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Created at</th>
               <td>{timeTag(channel.createdAt)}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Updated at</th>
               <td>{timeTag(channel.updatedAt)}</td>
             </tr>

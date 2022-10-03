@@ -37,7 +37,6 @@ const truncate = (value: string | number) => {
   return output ?? ''
 }
 
-
 const jsonTruncate = (obj: unknown) => {
   return truncate(JSON.stringify(obj, null, 2))
 }

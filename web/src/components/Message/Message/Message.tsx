@@ -4,7 +4,10 @@ import { Link, routes, navigate } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 
-import type { DeleteMessageMutationVariables, FindMessageById } from 'types/graphql'
+import type {
+  DeleteMessageMutationVariables,
+  FindMessageById,
+} from 'types/graphql'
 
 const DELETE_MESSAGE_MUTATION = gql`
   mutation DeleteMessageMutation($id: Int!) {
@@ -81,19 +84,24 @@ const Message = ({ message }: Props) => {
             <tr>
               <th>Id</th>
               <td>{message.id}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Text</th>
               <td>{message.text}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Channel id</th>
               <td>{message.channelId}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>User id</th>
               <td>{message.userId}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Created at</th>
               <td>{timeTag(message.createdAt)}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Updated at</th>
               <td>{timeTag(message.updatedAt)}</td>
             </tr>

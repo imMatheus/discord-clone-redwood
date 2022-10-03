@@ -6,7 +6,10 @@ import { toast } from '@redwoodjs/web/toast'
 
 import { QUERY } from 'src/components/Message/MessagesCell'
 
-import type { DeleteMessageMutationVariables, FindMessages } from 'types/graphql'
+import type {
+  DeleteMessageMutationVariables,
+  FindMessages,
+} from 'types/graphql'
 
 const DELETE_MESSAGE_MUTATION = gql`
   mutation DeleteMessageMutation($id: Int!) {
@@ -36,7 +39,6 @@ const truncate = (value: string | number) => {
   }
   return output ?? ''
 }
-
 
 const jsonTruncate = (obj: unknown) => {
   return truncate(JSON.stringify(obj, null, 2))

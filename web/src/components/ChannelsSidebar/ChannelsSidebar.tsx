@@ -1,4 +1,5 @@
 import ChannelsSidebarCell from 'src/components/ChannelsSidebar/ChannelsSidebarCell'
+import UserDisplay from 'src/components/ChannelsSidebar/UserDisplay'
 
 interface Props {
   serverId: number
@@ -6,8 +7,9 @@ interface Props {
 
 const ChannelsSidebar = ({ serverId }: Props) => {
   return (
-    <aside className="w-60 bg-clr-bg-secondary">
+    <aside className="flex w-60 flex-col bg-clr-bg-secondary">
       <ChannelsSidebarCell id={serverId} />
+      <UserDisplay />
     </aside>
   )
 }

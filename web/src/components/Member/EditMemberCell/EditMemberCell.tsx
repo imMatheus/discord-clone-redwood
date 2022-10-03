@@ -60,10 +60,17 @@ export const Success = ({ member }: CellSuccessProps<EditMemberById>) => {
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">Edit Member {member?.id}</h2>
+        <h2 className="rw-heading rw-heading-secondary">
+          Edit Member {member?.id}
+        </h2>
       </header>
       <div className="rw-segment-main">
-        <MemberForm member={member} onSave={onSave} error={error} loading={loading} />
+        <MemberForm
+          member={member}
+          onSave={onSave}
+          error={error}
+          loading={loading}
+        />
       </div>
     </div>
   )

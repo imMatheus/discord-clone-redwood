@@ -62,10 +62,17 @@ export const Success = ({ channel }: CellSuccessProps<EditChannelById>) => {
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">Edit Channel {channel?.id}</h2>
+        <h2 className="rw-heading rw-heading-secondary">
+          Edit Channel {channel?.id}
+        </h2>
       </header>
       <div className="rw-segment-main">
-        <ChannelForm channel={channel} onSave={onSave} error={error} loading={loading} />
+        <ChannelForm
+          channel={channel}
+          onSave={onSave}
+          error={error}
+          loading={loading}
+        />
       </div>
     </div>
   )

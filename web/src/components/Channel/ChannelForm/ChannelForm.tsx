@@ -12,9 +12,6 @@ import {
 import type { EditChannelById, UpdateChannelInput } from 'types/graphql'
 import type { RWGqlError } from '@redwoodjs/forms'
 
-
-
-
 type FormChannel = NonNullable<EditChannelById['channel']>
 
 interface ChannelFormProps {
@@ -26,16 +23,6 @@ interface ChannelFormProps {
 
 const ChannelForm = (props: ChannelFormProps) => {
   const onSubmit = (data: FormChannel) => {
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
     props.onSave(data, props?.channel?.id)
   }
 
@@ -48,7 +35,7 @@ const ChannelForm = (props: ChannelFormProps) => {
           titleClassName="rw-form-error-title"
           listClassName="rw-form-error-list"
         />
-      
+
         <Label
           name="name"
           className="rw-label"
@@ -56,15 +43,14 @@ const ChannelForm = (props: ChannelFormProps) => {
         >
           Name
         </Label>
-        
-          <TextField
-            name="name"
-            defaultValue={props.channel?.name}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="name"
+          defaultValue={props.channel?.name}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="name" className="rw-field-error" />
 
@@ -75,9 +61,7 @@ const ChannelForm = (props: ChannelFormProps) => {
         >
           Channel type
         </Label>
-        
-          
-          
+
         <div className="rw-check-radio-items">
           <RadioField
             id="channel-channel_type-0"
@@ -87,11 +71,9 @@ const ChannelForm = (props: ChannelFormProps) => {
             className="rw-input"
             errorClassName="rw-input rw-input-error"
           />
-          <div>
-            Chat
-          </div>
+          <div>Chat</div>
         </div>
-          
+
         <div className="rw-check-radio-items">
           <RadioField
             id="channel-channel_type-1"
@@ -101,12 +83,8 @@ const ChannelForm = (props: ChannelFormProps) => {
             className="rw-input"
             errorClassName="rw-input rw-input-error"
           />
-          <div>
-            Voice
-          </div>
+          <div>Voice</div>
         </div>
-          
-        
 
         <FieldError name="channel_type" className="rw-field-error" />
 
@@ -117,23 +95,19 @@ const ChannelForm = (props: ChannelFormProps) => {
         >
           Server id
         </Label>
-        
-          <NumberField
-            name="serverId"
-            defaultValue={props.channel?.serverId}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <NumberField
+          name="serverId"
+          defaultValue={props.channel?.serverId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="serverId" className="rw-field-error" />
 
         <div className="rw-button-group">
-          <Submit
-            disabled={props.loading}
-            className="rw-button rw-button-blue"
-          >
+          <Submit disabled={props.loading} className="rw-button rw-button-blue">
             Save
           </Submit>
         </div>
