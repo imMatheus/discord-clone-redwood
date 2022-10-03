@@ -108,8 +108,8 @@ export const handler = async (
     //
     // If this returns anything else, it will be returned by the
     // `signUp()` function in the form of: `{ message: 'String here' }`.
-    handler: ({ username, hashedPassword, salt, userAttributes }) => {
-      return db.user.create({
+    handler: async ({ username, hashedPassword, salt, userAttributes }) => {
+      const user = await db.user.create({
         data: {
           email: userAttributes.email,
           username,
@@ -119,6 +119,33 @@ export const handler = async (
           // name: userAttributes.name
         },
       })
+
+      console.log('we in thus')
+      console.log(user)
+
+      // TODO: Fix better solutions for this
+      const firstServer = await db.server.findFirst({
+        select: {
+          id: true,
+        },
+
+        orderBy: {
+          createdAt: 'asc',
+        },
+      })
+
+      console.log(firstServer)
+
+      if (firstServer) {
+        await db.member.create({
+          data: {
+            serverId: firstServer.id,
+            userId: user.id,
+          },
+        })
+      }
+
+      return user
     },
 
     errors: {
