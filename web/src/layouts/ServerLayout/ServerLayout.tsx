@@ -10,9 +10,9 @@ const ServerLayout = ({ children }: ServerLayoutProps) => {
   console.log(params)
 
   return (
-    <div className="flex flex-1 bg-red-800">
+    <div className="flex flex-1">
       <ChannelsSidebar serverId={parseInt(params.serverId)} />
-      <div className="flex-1 bg-orange-400 p-2">{children}</div>
+      <div className="flex-1 p-2">{children}</div>
     </div>
   )
 }

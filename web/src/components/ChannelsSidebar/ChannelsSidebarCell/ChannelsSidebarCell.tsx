@@ -2,6 +2,8 @@ import type { ChannelsSidebar } from 'types/graphql'
 
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
+import ChannelsSidebarChannelItem from 'src/components/ChannelsSidebar/ChannelsSidebarChannelItem'
+
 export const QUERY = gql`
   query ChannelsSidebar($id: Int!) {
     server: server(id: $id) {
@@ -10,6 +12,8 @@ export const QUERY = gql`
       createdAt
       channels {
         id
+        createdAt
+        updatedAt
         name
       }
     }
@@ -32,10 +36,14 @@ export const Success = ({ server }: CellSuccessProps<ChannelsSidebar>) => {
       <div className="sticky top-0 border-b border-b-clr-black bg-clr-bg-secondary py-3 px-4 font-medium">
         {server.name}
       </div>
-      <div className="flex-1 py-3 px-4">
-        <ul className="">
-          {[1, 2, 3, 4, 6, 7, 8].map((num) => (
-            <li key={num}>Hej</li>
+      <div className="flex-1 py-3 px-2">
+        <ul className="space-y-1">
+          {server.channels.map((channel) => (
+            <ChannelsSidebarChannelItem
+              key={channel.id}
+              serverId={server.id}
+              channel={channel}
+            />
           ))}
         </ul>
       </div>
