@@ -23,9 +23,9 @@ const Routes = () => {
       <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
       <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
 
-      <Set wrap={MainLayout}>
+      <Set wrap={MainLayout} private unauthenticated="login">
         <Route path="/" page={HomePage} name="home" />
-        <Set wrap={ServerLayout} private unauthenticated="home">
+        <Set wrap={ServerLayout}>
           <Route path="/server/{serverId:Int}/channel/{channelId:Int}" page={ChannelPage} name="channel" />
           <Route path="/server/{serverId:Int}" page={ServerServerPage} name="server" />
         </Set>
