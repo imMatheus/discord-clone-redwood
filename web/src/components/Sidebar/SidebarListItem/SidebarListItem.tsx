@@ -21,7 +21,18 @@ const SidebarListItem: React.FC<SidebarListItemProps> = ({ server }) => {
   return (
     <div className="relative flex w-[4.5rem] items-center justify-center overflow-x-hidden px-3">
       <div className="peer group">
-        <Link to={routes.server({ serverId: server.id })}>
+        <Link
+          to={
+            server.channels[0]
+              ? routes.channel({
+                  serverId: server.id,
+                  channelId: server.channels[0].id,
+                })
+              : routes.server({
+                  serverId: server.id,
+                })
+          }
+        >
           <div
             className={classNames(
               'peer flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-3xl bg-clr-bg-primary text-lg transition-all duration-300 group-hover:rounded-2xl group-hover:bg-clr-blurple',

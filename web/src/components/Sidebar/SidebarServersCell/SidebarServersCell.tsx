@@ -9,6 +9,9 @@ export const QUERY = gql`
     servers {
       id
       name
+      channels {
+        id
+      }
     }
   }
 `
