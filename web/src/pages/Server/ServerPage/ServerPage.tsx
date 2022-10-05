@@ -4,8 +4,6 @@ type ServerPageProps = {
 }
 
 const ServerPage = ({ serverId }: ServerPageProps) => {
-  console.log('serverId: ', serverId)
-
   return <ServerCell id={serverId} />
 }
 

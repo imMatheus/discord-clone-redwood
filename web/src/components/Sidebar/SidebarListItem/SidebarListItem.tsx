@@ -15,8 +15,6 @@ const SidebarListItem: React.FC<SidebarListItemProps> = ({
   server,
   loading,
 }) => {
-  console.log('server: ', server)
-
   const { pathname } = useLocation()
 
   if (loading || !server) {

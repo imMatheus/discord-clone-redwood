@@ -29,8 +29,6 @@ export const Failure = ({ error }: CellFailureProps) => (
 )
 
 export const Success = ({ server }: CellSuccessProps<ChannelsSidebar>) => {
-  console.log('hi sidebar ', server)
-
   return (
     <div className="flex flex-1 flex-col overflow-y-scroll">
       <div className="sticky top-0 border-b border-b-clr-black bg-clr-bg-secondary py-3 px-4 font-medium">

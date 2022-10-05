@@ -31,8 +31,6 @@ export const Failure = ({ error }: CellFailureProps) => (
 )
 
 export const Success = ({ servers }: CellSuccessProps<ServersQuery>) => {
-  console.log('log; ', servers)
-
   return (
     <ul className="flex w-[4.5rem] flex-col gap-2 overflow-x-visible overflow-y-scroll py-2">
       {servers.map((server) => {

@@ -19,9 +19,6 @@ const ChannelsSidebarChannelItem: React.FC<SidebarListItemProps> = ({
   const { pathname } = useLocation()
 
   const match = pathname.startsWith(`/server/${serverId}/channel/${channel.id}`)
-  console.log(serverId)
-  console.log('channel')
-  console.log(channel)
 
   return (
     <Link
