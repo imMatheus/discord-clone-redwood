@@ -4,6 +4,7 @@ export const schema = gql`
     email: String!
     username: String!
     hashedPassword: String!
+    avatar_url: String!
     salt: String!
     resetToken: String
     resetTokenExpiresAt: DateTime

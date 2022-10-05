@@ -2,7 +2,12 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-body {
-  @apply bg-clr-bg-primary text-clr-text;
+
+*   {
   font-family: 'Open Sans', sans-serif;
 }
+body {
+  @apply bg-clr-bg-primary text-clr-text;
+
+}
+

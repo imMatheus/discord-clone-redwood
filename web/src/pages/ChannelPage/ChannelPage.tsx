@@ -1,19 +1,18 @@
 import { MetaTags } from '@redwoodjs/web'
 
+import MessagesCell from 'src/components/MessagesCell'
+
 interface Props {
   serverId: number
   channelId: number
 }
 
-const ChannelPage = ({ serverId, channelId }: Props) => {
+const ChannelPage = ({ channelId }: Props) => {
   return (
     <>
       <MetaTags title="Channel" description="Channel page" />
 
-      <h1>ChannelPage</h1>
-
-      <p className="mb-2 bg-blue-400">{serverId}</p>
-      <p className="bg-blue-400">{channelId}</p>
+      <MessagesCell id={channelId} />
     </>
   )
 }

@@ -6,7 +6,7 @@ import ChannelsSidebarChannelItem from 'src/components/ChannelsSidebar/ChannelsS
 
 export const QUERY = gql`
   query ChannelsSidebar($id: Int!) {
-    server: server(id: $id) {
+    server(id: $id) {
       id
       name
       createdAt

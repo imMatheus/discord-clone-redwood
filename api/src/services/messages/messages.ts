@@ -6,10 +6,13 @@ import type {
 
 import { db } from 'src/lib/db'
 
-export const messages: QueryResolvers['messages'] = ({ channelId }) => {
+export const messages: QueryResolvers['messages'] = ({ id }) => {
   return db.message.findMany({
     where: {
-      channelId,
+      channelId: id,
+    },
+    orderBy: {
+      createdAt: 'desc',
     },
   })
 }

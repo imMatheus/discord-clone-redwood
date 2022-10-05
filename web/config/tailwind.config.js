@@ -14,6 +14,8 @@ module.exports = {
           black: '#23272a',
           text: '#ffffff',
           'text-grayed': '#96989d',
+          'text-light': '#dcddde',
+          'text-mute': '#a4a6aa',
         },
         'clr-bg': {
           separator: '#4F545C7A',
@@ -23,6 +25,7 @@ module.exports = {
           secondary: '#2F3136',
           panel: '#292B2F',
           dark: '#202225',
+          overlay: '#04040510',
         },
       },
     },
