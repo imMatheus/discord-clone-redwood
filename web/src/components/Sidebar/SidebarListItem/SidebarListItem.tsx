@@ -6,15 +6,26 @@ import type { ServersQuery } from 'types/graphql'
 import { Link, routes, useLocation } from '@redwoodjs/router'
 import type { CellSuccessProps } from '@redwoodjs/web'
 
-interface SidebarListItemProps {
-  server: CellSuccessProps<ServersQuery>['servers'][number]
+type SidebarListItemProps = {
+  server?: CellSuccessProps<ServersQuery>['servers'][number]
   loading?: boolean
 }
 
-const SidebarListItem: React.FC<SidebarListItemProps> = ({ server }) => {
+const SidebarListItem: React.FC<SidebarListItemProps> = ({
+  server,
+  loading,
+}) => {
   console.log('server: ', server)
 
   const { pathname } = useLocation()
+
+  if (loading || !server) {
+    return (
+      <div className="relative flex w-[4.5rem] animate-pulse items-center justify-center overflow-x-hidden px-3">
+        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-3xl bg-clr-bg-primary text-lg transition-all duration-300 hover:rounded-2xl hover:bg-clr-blurple"></div>
+      </div>
+    )
+  }
 
   const match = pathname.startsWith(`/server/${server.id}`)
 
@@ -36,7 +47,6 @@ const SidebarListItem: React.FC<SidebarListItemProps> = ({ server }) => {
           <div
             className={classNames(
               'peer flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-3xl bg-clr-bg-primary text-lg transition-all duration-300 group-hover:rounded-2xl group-hover:bg-clr-blurple',
-
               { 'rounded-2xl bg-clr-blurple': match }
             )}
           >

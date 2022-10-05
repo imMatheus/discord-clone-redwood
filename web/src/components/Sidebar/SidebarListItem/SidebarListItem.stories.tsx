@@ -16,7 +16,19 @@ import type { ComponentMeta } from '@storybook/react'
 import SidebarListItem from './SidebarListItem'
 
 export const generated = () => {
-  return <SidebarListItem />
+  return (
+    <SidebarListItem
+      server={{
+        id: 1,
+        name: 'Im a server',
+        channels: [
+          {
+            id: 3,
+          },
+        ],
+      }}
+    />
+  )
 }
 
 export default {
