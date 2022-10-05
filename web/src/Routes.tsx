@@ -12,7 +12,6 @@ import { Set, Router, Route } from '@redwoodjs/router'
 // import ChannelsLayout from 'src/layouts/ChannelsLayout'
 import MainLayout from 'src/layouts/MainLayout'
 import MembersLayout from 'src/layouts/MembersLayout'
-import MessagesLayout from 'src/layouts/MessagesLayout'
 import ServerLayout from 'src/layouts/ServerLayout'
 
 const Routes = () => {
@@ -33,12 +32,6 @@ const Routes = () => {
 
       <Route notfound page={NotFoundPage} />
 
-      <Set wrap={MessagesLayout}>
-        <Route path="/messages/new" page={MessageNewMessagePage} name="newMessage" />
-        <Route path="/messages/{id:Int}/edit" page={MessageEditMessagePage} name="editMessage" />
-        <Route path="/messages/{id:Int}" page={MessageMessagePage} name="message" />
-        <Route path="/messages" page={MessageMessagesPage} name="messages" />
-      </Set>
       {/* <Set wrap={ChannelsLayout}>
         <Route path="/channels/new" page={ChannelNewChannelPage} name="newChannel" />
         <Route path="/channels/{id:Int}/edit" page={ChannelEditChannelPage} name="editChannel" />

@@ -6,8 +6,12 @@ import type {
 
 import { db } from 'src/lib/db'
 
-export const messages: QueryResolvers['messages'] = () => {
-  return db.message.findMany()
+export const messages: QueryResolvers['messages'] = ({ channelId }) => {
+  return db.message.findMany({
+    where: {
+      channelId,
+    },
+  })
 }
 
 export const message: QueryResolvers['message'] = ({ id }) => {

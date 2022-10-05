@@ -11,7 +11,7 @@ export const schema = gql`
   }
 
   type Query {
-    messages: [Message!]! @requireAuth
+    messages(channelId: Int!): [Message!]! @requireAuth
     message(id: Int!): Message @requireAuth
   }
 
