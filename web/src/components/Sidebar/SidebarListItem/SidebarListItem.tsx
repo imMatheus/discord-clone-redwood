@@ -7,23 +7,11 @@ import { Link, routes, useLocation } from '@redwoodjs/router'
 import type { CellSuccessProps } from '@redwoodjs/web'
 
 type SidebarListItemProps = {
-  server?: CellSuccessProps<ServersQuery>['servers'][number]
-  loading?: boolean
+  server: CellSuccessProps<ServersQuery>['servers'][number]
 }
 
-const SidebarListItem: React.FC<SidebarListItemProps> = ({
-  server,
-  loading,
-}) => {
+const SidebarListItem: React.FC<SidebarListItemProps> = ({ server }) => {
   const { pathname } = useLocation()
-
-  if (loading || !server) {
-    return (
-      <div className="relative flex w-[4.5rem] animate-pulse items-center justify-center overflow-x-hidden px-3">
-        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-3xl bg-clr-bg-primary text-lg transition-all duration-300 hover:rounded-2xl hover:bg-clr-blurple"></div>
-      </div>
-    )
-  }
 
   const match = pathname.startsWith(`/server/${server.id}`)
 

@@ -19,7 +19,14 @@ export const QUERY = gql`
 export const Loading = () => (
   <ul className="flex w-[4.5rem] flex-col gap-2 overflow-x-visible overflow-y-scroll py-2">
     {[1, 2, 3, 4, 5, 6].map((num) => {
-      return <SidebarListItem key={num} loading={true} />
+      return (
+        <div
+          key={num}
+          className="relative flex w-[4.5rem] animate-pulse items-center justify-center overflow-x-hidden px-3"
+        >
+          <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-3xl bg-clr-bg-primary text-lg transition-all duration-300 hover:rounded-2xl hover:bg-clr-blurple"></div>
+        </div>
+      )
     })}
   </ul>
 )

@@ -20,7 +20,15 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div className="flex-1">Loading...</div>
+export const Loading = () => (
+  <div className="flex-1 py-3 px-2">
+    <ul className="space-y-1">
+      {[1, 2, 3, 4, 5, 6, 7].map((num) => (
+        <ChannelsSidebarChannelItem key={num} loading={true} />
+      ))}
+    </ul>
+  </div>
+)
 
 export const Empty = () => <div>Empty</div>
 
