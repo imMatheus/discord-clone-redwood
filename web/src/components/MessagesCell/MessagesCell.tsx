@@ -31,6 +31,7 @@ export const Success = ({ messages }: CellSuccessProps<MessagesQuery>) => {
 
   return (
     <ul className="flex flex-1 flex-col gap-1 overflow-y-scroll pt-4">
+      hejsan
       {messages.map((message) => {
         return <Message key={message.id} message={message} />
       })}

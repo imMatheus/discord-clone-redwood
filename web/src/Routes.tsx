@@ -12,6 +12,7 @@ import { Set, Router, Route } from '@redwoodjs/router'
 // import ChannelsLayout from 'src/layouts/ChannelsLayout'
 import MainLayout from 'src/layouts/MainLayout'
 import ServerLayout from 'src/layouts/ServerLayout'
+import ChannelPage from 'src/pages/ChannelPage'
 
 const Routes = () => {
   return (

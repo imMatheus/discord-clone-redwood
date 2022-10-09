@@ -11,7 +11,7 @@ const ChannelPage = ({ channelId }: Props) => {
   return (
     <>
       <MetaTags title="Channel" description="Channel page" />
-
+      hej
       <MessagesCell id={channelId} />
     </>
   )
